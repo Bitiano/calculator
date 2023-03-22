@@ -1,0 +1,187 @@
+/**
+ * Set margin and padding to 0 for all elements
+ * and use border-box for box-sizing
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * Set the body to display as a flex container
+ * with a height of 100% of the viewport
+ * and center its items both horizontally and vertically
+ * Set the background color to #202020
+ */
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #202020;
+}
+
+/**
+ * Set the container to have a relative position
+ * with a minimum width of 300px and a minimum height of 400px
+ * Set padding to 40px on top and 30px on the sides and bottom
+ * Set a border radius of 20px and a box shadow with multiple layers
+ */
+.container {
+  position: relative;
+  min-width: 300px;
+  min-height: 400px;
+  padding: 40px 30px 30px;
+  border-radius: 20px;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/**
+ * Set the button inside the container to have a white color
+ * and a relative position
+ * Set its display to grid and its width and height to 80px
+ * Center its content both horizontally and vertically
+ * Set a margin of 8px and a background with a linear gradient
+ * Set a box shadow with multiple layers and prevent user selection
+ * Remove the border and set the cursor to pointer
+ * Set the font weight to 400 and a border radius of 10px
+ */
+.container button {
+  color: #fff !important;
+  position: relative;
+  display: grid;
+  width: 80px;
+  place-items: center;
+  margin: 8px;
+  height: 80px;
+  background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 10px;
+}
+
+/**
+ * Set the filter to increase brightness when the button is active
+ */
+.calculator button:active {
+  filter: brightness(1.5);
+}
+
+/**
+ * Set a pseudo element before the button content
+ * with a position of absolute and specific dimensions
+ * Set a border radius and a background with a linear gradient
+ * Set a box shadow with multiple layers and specific borders
+ */
+.calculator button::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  bottom: 14px;
+  right: 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+  box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
+    10px 5px 10px rgba(0, 0, 0, 0.15);
+  border-left: 1px solid #0004;
+  border-bottom: 1px solid #0004;
+  border-top: 1px solid #0009;
+}
+
+/**
+ * Set the icon inside the button to have a relative position
+ * with a normal font style and a size of 1.5em
+ * Set the text to uppercase
+ */
+.calculator button i {
+  position: relative;
+  font-style: normal;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+/**
+ * Set the calculator to have a relative position
+ * and a display of grid
+ */
+.calculator {
+  position: relative;
+  display: grid;
+}
+
+/**
+ * Set the value inside the calculator to have a relative position
+ * and span across 4 columns
+ * Set a height of 100px and a width of 100% minus 20px
+ * Set a left position of 10px and remove the border and outline
+ * Set a background color of #a7af7c and a margin bottom of 10px
+ * Set a border radius of 10px and a box shadow with a specific border
+ * Set the text alignment to right and the font size to 2em
+ */
+.calculator .value {
+  position: relative;
+  grid-column: span 4;
+  height: 100px;
+  width: calc(100% - 20px);
+  left: 10px;
+  border: none;
+  outline: none;
+  background-color: #a7af7c;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+  text-align: right;
+  padding: 10px;
+  font-size: 2em;
+}
+
+/**
+ * Set the clear button to span across 2 columns
+ * with a width of 180px and a background color of #f00
+ * Set a pseudo element before the button content
+ * with a background of a linear gradient and specific borders
+ */
+.calculator .clear {
+  grid-column: span 2;
+  width: 180px;
+  background: #f00;
+}
+.calculator .clear::before {
+  background: linear-gradient(90deg, #d20000, #ffffff5c);
+  border-left: 1px solid #fff4;
+  border-bottom: 1px solid #fff4;
+  border-top: 1px solid #fff4;
+}
+
+/**
+ * Set the plus button to span across 2 rows
+ * with a height of 180px
+ */
+.calculator .plus {
+  grid-row: span 2;
+  height: 180px;
+}
+
+/**
+ * Set the equal button to have a background color of #2196f3
+ * Set a pseudo element before the button content
+ * with a background of a linear gradient and specific borders
+ */
+.calculator .equal {
+  background: #2196f3;
+}
+.calculator .equal::before {
+  background: linear-gradient(90deg, #1479c9, #ffffff5c);
+  border-left: 1px solid #fff4;
+  border-bottom: 1px solid #fff4;
+  border-top: 1px solid #fff4;
+}
